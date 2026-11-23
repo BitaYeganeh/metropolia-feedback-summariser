@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Metropolia Feedback Summariser</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    textarea { width: 100%; height: 180px; padding: 12px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 12px; padding: 10px 20px; font: inherit; cursor: pointer; }
+    .error { color: #b00020; margin-bottom: 12px; }
+    .note { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Metropolia Course Feedback Summariser</h1>
+  <p class="note">Paste student feedback below. The tool extracts themes, sentiment and the word count. (Demo runs in mock mode — no data leaves this machine.)</p>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <form method="post" action="/summarise">
+    <textarea name="feedback" placeholder="Paste course feedback here..."></textarea>
+    <button type="submit">Summarise feedback</button>
+  </form>
+</body>
+</html>

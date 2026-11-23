@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Summary — Metropolia Feedback Summariser</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .label { font-size: 0.8rem; text-transform: uppercase; color: #666; letter-spacing: 0.05em; }
+    .value { font-size: 1.2rem; margin-top: 4px; }
+    .sentiment-positive { color: #0a7a2f; }
+    .sentiment-negative { color: #b00020; }
+    .sentiment-mixed, .sentiment-neutral { color: #8a6d00; }
+    a { color: #0b5fff; }
+    ul { margin: 8px 0 0; }
+  </style>
+</head>
+<body>
+  <h1>Feedback summary</h1>
+
+  <div class="card">
+    <div class="label">Sentiment</div>
+    <div class="value sentiment-{{ sentiment }}">{{ sentiment }}</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Themes detected</div>
+    <ul>
+      {% for theme in themes %}
+        <li>{{ theme }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="label">Feedback length</div>
+    <div class="value">{{ word_count }} words</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Original feedback</div>
+    <p>{{ original }}</p>
+  </div>
+  <div class="card">
+    <div class="label">Top Issue to Fix</div>
+    <div class="value">{{ top_issue }}</div>
+  </div>
+
+  <p><a href="/">← Analyse another piece of feedback</a></p>
+</body>
+</html>
