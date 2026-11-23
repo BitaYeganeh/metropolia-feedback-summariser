@@ -5,6 +5,7 @@
   <title>Metropolia Feedback Summariser</title>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    h1 { color: #0b5fff; }
     textarea { width: 100%; height: 180px; padding: 12px; font: inherit; box-sizing: border-box; }
     button { margin-top: 12px; padding: 10px 20px; font: inherit; cursor: pointer; }
     .error { color: #b00020; margin-bottom: 12px; }
@@ -21,7 +22,7 @@
 
   <form method="post" action="/summarise">
     <textarea name="feedback" placeholder="Paste course feedback here..."></textarea>
-    <button type="submit">Summarise feedback</button>
+    <button type="submit" style="background-color: #0b5fff; color: white; border: none; border-radius: 4px;">Summarise feedback</button>
   </form>
 </body>
 </html>
